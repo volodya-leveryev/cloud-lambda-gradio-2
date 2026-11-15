@@ -18,7 +18,7 @@ jobs:
       - name: Tag Docker image
         uses: docker/metadata-action@v6
         with:
-          images: 496008581975.dkr.ecr.eu-west-3.amazonaws.com/ivt24/leveryev
+          images: ivt24/leveryev:latest
         id: meta
 
       - name: Login in AWS ECR
