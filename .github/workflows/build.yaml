@@ -18,13 +18,13 @@ jobs:
       - name: Tag Docker image
         uses: docker/metadata-action@v6
         with:
-          images: ""  # путь к репозиторию AWS ECR
+          images: 496008581975.dkr.ecr.eu-west-3.amazonaws.com/ivt24/leveryev
         id: meta
 
       - name: Login in AWS ECR
         uses: docker/login-action@v4
         with:
-          registry: ""  # Путь к реестру AWS ECR
+          registry: 496008581975.dkr.ecr.eu-west-3.amazonaws.com
           username: ${{ vars.AWS_ACCESS_KEY_ID }}
           password: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
