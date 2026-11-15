@@ -15,11 +15,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Tag Docker image
-        uses: docker/metadata-action@v6
-        with:
-          images: ivt24/leveryev
-        id: meta
+      # - name: Tag Docker image
+      #   uses: docker/metadata-action@v6
+      #   with:
+      #     images: ivt24/leveryev
+      #   id: meta
 
       - name: Login in AWS ECR
         uses: docker/login-action@v4
@@ -32,4 +32,4 @@ jobs:
         uses: docker/build-push-action@v7
         with:
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: 496008581975.dkr.ecr.eu-west-3.amazonaws.com/ivt24/leveryev
