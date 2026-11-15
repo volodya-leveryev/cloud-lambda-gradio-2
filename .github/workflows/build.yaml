@@ -18,7 +18,7 @@ jobs:
       - name: Tag Docker image
         uses: docker/metadata-action@v6
         with:
-          images: ivt24/leveryev:latest
+          images: ivt24/leveryev
         id: meta
 
       - name: Login in AWS ECR
@@ -31,4 +31,5 @@ jobs:
       - name: Build and push Docker image to AWS ECR
         uses: docker/build-push-action@v7
         with:
+          push: true
           tags: ${{ steps.meta.outputs.tags }}
